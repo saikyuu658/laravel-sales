@@ -5,16 +5,16 @@
 @section('content-main')
 <div>
     <h1 class="font-bold text-[25px] my-5">Produtos</h1>
-    <a href="#" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
-        Novo produto
-    </a>
+    <div class="w-[150px]">
+        <x-button text="Novo produto" id="btnNewProdut" />
+    </div>
 </div>
 
 <div class="bg-white shadow-md rounded mt-6">
     <div class="overflow-y-auto" style="height: 82vh;">
         <table class="min-w-full table-auto rounded-md">
             <!-- Cabeçalho da Tabela -->
-            <thead class="bg-indigo-600 text-white sticky top-0" style="border-top-right-radius: 10px">
+            <thead class="bg-gray-100 text-gray-800 sticky top-0" style="border-top-right-radius: 10px">
                 <tr>
                     <th class="px-4 py-2 text-left" style="border-top-left-radius: 6px">Nome</th>
                     <th class="px-4 py-2 text-left">Descrição</th>
@@ -44,9 +44,7 @@
                     <td class="px-4 py-2"> $usuario->valor </td>
                     <td class="px-4 py-2"> $usuario->qtd </td>
                     <td class="px-4 py-2">
-                        <a href="#" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-4 rounded">
-                            Detalhar
-                        </a>
+                        <x-link link="#" id="detalsProduts" text="detalhar" />
                     </td>
                 </tr>
             
@@ -54,4 +52,11 @@
         </table>
     </div>
 </div>
+
+<script> 
+
+    function showmodal(){
+        alert('ahh')
+    }
+</script>
 @endsection

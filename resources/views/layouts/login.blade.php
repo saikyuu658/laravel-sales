@@ -5,21 +5,15 @@
 
       <form
         
-        class="rounded-md border-indigo-600 w-[330px] border-2 px-3 py-6">
+        class="rounded-md  w-[330px] border-2 px-3 py-6 shadow-md">
          <h2 class="block text-gray-700 font-bold pb-8 text-[25px]">Login</h2>
 
-         <div class="mb-4">
-             <label for="email" class="block text-gray-700 font-semibold mb-2">E-mail</label>
-             <x-input type="text" id="email" name='email'  placeholder="Digite seu email"/>
-         </div>
+             <x-input type="text" label="Email" id="email" name='email'  placeholder="Digite seu email"/>
 
-         <div class="mb-6">
-             <label for="password" class="block text-gray-700 font-semibold mb-2">Senha</label>
-             <x-input type="password" id="password" name='password'  placeholder="Digite sua senha"/>
-         </div>
+             <x-input type="password" label="Senha" id="password" name='password'  placeholder="Digite sua senha"/>
 
          <div>
-             <x-button text="entrar"/>
+             <x-button text="Entrar"/>
          </div>
      </form>
       

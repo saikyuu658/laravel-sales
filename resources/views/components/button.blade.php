@@ -1,5 +1,5 @@
-@props(['text'])
+@props(['text', 'id'])
 
-<button class="w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+<button id="{{$id}}" class="w-full  text-gray-800 font-semibold shadow-md  py-2 rounded-lg bg-gray-100 hover:bg-white focus:outline-none">
 {{$text}}
 </button>
