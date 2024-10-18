@@ -7,10 +7,10 @@
     <p>Digite seu email para entrar no sistema</p>
       <form class=" w-[330px]  px-3 py-6">
 
-             <x-input type="email" label="Email" id="email" name='email'  placeholder="Digite seu email"/>
+            <x-input type="email" label="Email" id="email" name='email'  placeholder="Digite seu email"/>
 
          <div class="pt-3">
-             <x-button text="Entrar" id="loginBtn"/>
+            <x-button text="Entrar" id="loginBtn"/>
          </div>
      </form>
       

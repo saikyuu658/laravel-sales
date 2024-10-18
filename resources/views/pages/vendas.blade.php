@@ -3,15 +3,15 @@
 @section('title', 'Vendas')
 
 @section('content-main')
-<div>
-    <h1 class="font-bold text-[25px] my-5">Vendas</h1>
+<div class="flex justify-between items-center">
+    <h1 class="font-bold text-[25px] my-4">Vendas</h1>
     <div class="w-[150px]">
         <x-button text="Nova venda" id="btnNewSale"/>
     </div>
 </div>
 
-<div class="bg-white shadow-md rounded mt-6">
-    <div class="overflow-y-auto" style="height: 82vh;">
+<div class="bg-white shadow-md rounded mt-2">
+    <div class="overflow-y-auto" style="height: 50vh;">
         <table class="min-w-full table-auto rounded-md">
             <!-- Cabeçalho da Tabela -->
             <thead class="bg-gray-100 text-gray-800 sticky top-0" style="border-top-right-radius: 10px">
@@ -44,7 +44,7 @@
                     <td class="px-4 py-2"> $usuario->valor </td>
                     <td class="px-4 py-2"> $usuario->qtd </td>
                     <td class="px-4 py-2">
-                        <x-link link="#" id="detalharSale" text="detalhar" />
+                        <x-link link="#" id="detalharSale" text="detalhar" dataId="3" />
                     </td>
                 </tr>
             

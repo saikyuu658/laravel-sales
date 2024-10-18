@@ -2,7 +2,7 @@
 
 <div id="{{ $id }}" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div class="flex items-center justify-center min-h-screen">
-        <div class="fixed inset-0 backdrop-blur-sm bg-gray-50 bg-opacity-75 transition-opacity" onclick="document.getElementById('{{ $id }}').style.display='none'"></div>
+        <div class="fixed inset-0 backdrop-blur-sm bg-gray-800 bg-opacity-25  transition-opacity" onclick="document.getElementById('{{ $id }}').style.display='none'"></div>
         <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
             <div class=" p-5">
                 <div class="flex justify-between items-center">
