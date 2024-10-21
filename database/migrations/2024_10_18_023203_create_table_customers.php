@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary()->default(Str::uuid());
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('cpf')->unique();
             $table->string('phone')->nullable();
             $table->timestamps();
         });

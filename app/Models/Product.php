@@ -4,12 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
     use HasFactory;
 
     protected $table = 'products';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'name', 'description', 'purchase_price', 'sale_price', 'category', 'stock_quantity', 'image_path'  ];
+
     
     public static function boot()
     {
@@ -21,13 +30,8 @@ class Product extends Model
         });
     }
 
-    protected $fillable = [
-        'name', 'quantity', 'purchase_price', 'sale_price',
-    ];
-
-    // Relacionamento com vendas
-    public function sales()
-    {
-        return $this->hasMany(Sale::class);
+    public function sales(){
+        return $this->belongsToMany(Sale::class)->withPivot('quantity', 'total');
     }
+   
 }

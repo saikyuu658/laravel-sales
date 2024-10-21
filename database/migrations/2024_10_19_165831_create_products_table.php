@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -13,11 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->uuid('id')->primary()->default(Str::uuid());
+            $table->uuid('id')->primary();
+
             $table->string('name');
-            $table->integer('qtd');
-            $table->decimal('buy_price', 10, 2);
+            $table->text('description')->nullable();
+            $table->decimal('purchase_price', 10, 2);
             $table->decimal('sale_price', 10, 2);
+            $table->string('category');
+            $table->integer('stock_quantity');
+            $table->string('image_path')->nullable();
+
             $table->timestamps();
         });
     }

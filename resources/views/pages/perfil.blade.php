@@ -18,7 +18,7 @@
     </div>
 
 
-    <x-modal title="Resetar senha" id="modalTeste" > 
+    <x-myModal title="Resetar senha" id="modalTeste" > 
         <form>
             <x-input type="password" label="Nova senha" id="password" name='password' placeholder="Digite a nova senha"/>         
             <x-input type="password" label="Confirme a nova senha" id="confirm" name='confirm' placeholder="Confirme a senha"/> 
@@ -26,7 +26,7 @@
                 <x-button id="resetPasswordBtn" text="Resetar senha" />
             </div>        
         </form>
-    </x-modal>
+    </x-myModal>
     
 
     <script>

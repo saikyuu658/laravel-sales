@@ -10,6 +10,13 @@ class Customer extends Model
 {
     use HasFactory;
 
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'name', 'cpf', 'email', 'phone'  ];
+
     protected $table = 'customers';
     
     public static function boot()
@@ -22,13 +29,9 @@ class Customer extends Model
         });
     }
 
-    protected $fillable = [
-        'name', 'email', 'phone',
-    ];
-
     // Relacionamento com vendas
-    public function sales()
-    {
+    public function sales(){
         return $this->hasMany(Sale::class);
     }
+
 }

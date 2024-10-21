@@ -14,14 +14,11 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->uuid('id')->primary()->default(Str::uuid());
             $table->uuid('customer_id');
-            $table->uuid('product_id');
-            $table->integer('quantity');
             $table->decimal('total', 10, 2);
             $table->decimal('discount', 5, 2)->nullable(); // Desconto percentual
             $table->timestamps();
 
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

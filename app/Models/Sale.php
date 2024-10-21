@@ -11,6 +11,16 @@ class Sale extends Model
     use HasFactory;
 
     protected $table = 'sales';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'customer_id',
+        'total',
+        'discount',
+    ];
     
     public static function boot()
     {
@@ -22,18 +32,12 @@ class Sale extends Model
         });
     }
 
-    protected $fillable = [
-        'customer_id', 'product_id', 'quantity', 'total', 'discount',
-    ];
-
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
+    public function customer() {
+        return $this->belongsTo(Customer::class);
     }
 
-    public function customer()
-    {
-        return $this->belongsTo(Customer::class);
+    public function products(){
+        return $this->belongsToMany(Product::class, 'sale_product')->withPivot('quantity', 'total')->withTimestamps();;
     }
     
 }
